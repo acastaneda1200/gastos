@@ -3,7 +3,7 @@
 include 'conexion.php';
 
 
-$query = "SELECT * from gastos";
+$query = "select idgastos, descripcion, cantidad, DATE_FORMAT(fecha, '%d-%M-%Y') as fecha from gastos";
 $result = mysqli_query($conexion, $query);
 if(!$result) {
   die('Query Failed'. mysqli_error($conexion));
